@@ -37,8 +37,8 @@ ENV PATH ${PATH}:/opt/tools
 RUN chmod +x /opt/tools/android-accept-licenses.sh
 RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --force --no-ui --filter platform-tools,tools,build-tools-21,build-tools-21.0.1,build-tools-21.0.2,build-tools-21.1,build-tools-21.1.1,build-tools-21.1.2,build-tools-22,build-tools-22.0.1,build-tools-23.0.2,android-21,android-22,android-23,addon-google_apis_x86-google-21,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services,sys-img-armeabi-v7a-android-21"]
 
-RUN which adb
-RUN which android
+#RUN which adb
+#RUN which android
 
 # Create emulator
 # RUN echo "no" | android create avd \
