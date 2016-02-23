@@ -58,6 +58,8 @@ RUN apt-get clean
 RUN mkdir -p /opt/workspace
 WORKDIR /opt/workspace
 
+RUN chown jenkins:jenkins /opt/workspace
+
 # Standard SSH port
 EXPOSE 22
 
