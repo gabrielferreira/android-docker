@@ -15,6 +15,7 @@ RUN mkdir -p /var/run/sshd
 RUN adduser --quiet jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
+RUN adduser jenkins sudo
 
 # Install java7
 RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:webupd8team/java && apt-get update -y
