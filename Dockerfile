@@ -5,8 +5,6 @@ MAINTAINER Gabriel Ferreira "contato@gabrielferreira.com"
 # Make sure the package repository is up to date.
 RUN apt-get update && apt-get -y upgrade
 
-
-
 # Install a basic SSH server
 RUN apt-get install -y openssh-server
 RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
