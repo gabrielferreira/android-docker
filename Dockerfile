@@ -3,14 +3,12 @@ FROM ubuntu:14.04
 MAINTAINER Gabriel Ferreira "contato@gabrielferreira.com"
 
 # Make sure the package repository is up to date.
-RUN apt-get update && apt-get -y upgrade \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y upgrade
+
+
 
 # Install a basic SSH server
-RUN apt-get install -y openssh-server \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt-get install -y openssh-server
 RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
 RUN mkdir -p /var/run/sshd
 
@@ -27,8 +25,6 @@ RUN apt-get install -y software-properties-common \
   && apt-get update \
   && echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections \
   && apt-get install -y oracle-java7-installer
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
 
 # Install Deps
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force-yes expect git wget libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1 python curl
