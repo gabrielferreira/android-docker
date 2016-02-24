@@ -42,7 +42,7 @@ RUN dpkg --add-architecture i386 \
   lib32ncurses5 \
   lib32z1 \
   python \
-  curl
+  curl \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
