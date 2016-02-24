@@ -71,14 +71,14 @@ RUN echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/us
 #RUN which android
 
 # Create emulator
-RUN echo "no" | android create avd \
-                --force \
-                --device "Nexus 5" \
-                --name test \
-                --target android-21 \
-                --abi armeabi-v7a \
-                --skin WVGA800 \
-                --sdcard 512M
+#RUN echo "no" | android create avd \
+#                --force \
+#                --device "Nexus 5" \
+#                --name test \
+#                --target android-21 \
+#                --abi armeabi-v7a \
+#                --skin WVGA800 \
+#                --sdcard 512M
 
 # Cleaning
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
