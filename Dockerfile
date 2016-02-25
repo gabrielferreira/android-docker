@@ -61,6 +61,8 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 COPY tools /opt/tools
 ENV PATH ${PATH}:/opt/tools
 
+RUN while :; do echo 'y'; sleep 2; done | android update sdk --all --no-ui
+
 RUN ["echo "y" | ", "android update sdk --all --no-ui"]
 
 RUN echo 'ANDROID_HOME="/opt/android-sdk-linux"' > /etc/environment
