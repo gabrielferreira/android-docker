@@ -61,7 +61,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 COPY tools /opt/tools
 ENV PATH ${PATH}:/opt/tools
 
-RUN while :; do echo 'y'; sleep 2; done | android update sdk --all --no-ui
+#RUN while :; do echo 'y'; sleep 2; done | android update sdk --all --no-ui
 
 RUN echo 'ANDROID_HOME="/opt/android-sdk-linux"' > /etc/environment
 RUN echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/opt/tools"' >> /etc/environment
